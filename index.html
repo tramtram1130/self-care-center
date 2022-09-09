@@ -4,8 +4,32 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
   </head>
-  <body>
-  
+  <body class="gradient-background column">
+    <h1 class="title">✨ Self Care Center ✨</h1>
+    <h3 class="title title2">Which type of message?</h3>
+    <section class="firstBox">
+      <section class="space-around">
+        <label class="radio-button" id="affirmation-button">
+          <input type="radio" name="radio" />
+          affirmation
+        </label>
+        <label class="radio-button" id="mantra-button">
+          <input type="radio" name="radio" />
+          mantra
+        </label>
+      </section>
+      <section class="center">
+        <button class="button" id="receive-button">Receive Message</button>
+      </section>
+    </section>
+    <section class="secondBox center">
+      <img id="image" src="./assets/meditate.svg" alt="meditate SVG"/>
+      <p class="hidden" id="displayed-message"></p>
+    </section>
+
+
+
+
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

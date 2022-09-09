@@ -6,3 +6,91 @@ dark-blue - #134d71;
 white - #ffffff;
 black - #000000;
 */
+
+.gradient-background {
+  background: rgb(19,77,113);
+  background: linear-gradient(180deg, rgba(19,77,113,1) 0%, rgba(120,167,198,1) 35%, rgba(247,228,191,1) 100%);
+}
+
+.title {
+  color: #ffffff;
+  text-align: center;
+  padding-top: 50px;
+  font-family: Quicksand;
+}
+
+.title2 {
+  font-size: 23px;
+}
+
+.firstBox {
+  width: 500px;
+  height: 80px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.secondBox {
+  width: 725px;
+  height: 115px;
+  margin-right:auto;
+  margin-left:auto;
+  margin-top: 80px;
+  border-radius: 8px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+.radio-button {
+  font-family: Quicksand;
+  font-style: italic;
+  margin-top: 15px;
+}
+
+#displayed-message {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-family: Quicksand;
+  font-size: 22px;
+  text-align: center;
+}
+
+.button {
+  background-color: #134d71;
+  border-radius: 4px;
+  width: 160px;
+  height: 25px;
+  margin-top: 10px;
+  font-family: Quicksand;
+  color: white;
+}
+
+.space-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+
+img {
+  width: 60px;
+}
+
+html {
+    min-height: 100%;
+}
