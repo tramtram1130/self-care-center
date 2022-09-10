@@ -12,9 +12,9 @@ var receiveMessageButton = document.querySelector('#receive-button')
 var addToFavoritesButton = document.querySelector('#add-to-favorites-button')
 var viewFavoritesButton = document.querySelector('#view-favorites-button')
 var homeButton = document.querySelector('#home-button')
-var message = document.querySelector('#displayed-message')
+var displayedMessage = document.querySelector('#displayed-message')
 var image = document.querySelector('#image')
-var favoriteMessagesList = document.querySelector('#favorite-messages-list')
+var favoriteMessagesRadioList = document.querySelector('#favorite-messages-list')
 
 
 // Event listeners
@@ -37,9 +37,9 @@ function getRandomMantra() {
 }
 
 function displayMessage() {
-  message.innerText = currentMessage
+  displayedMessage.innerText = currentMessage
   image.classList.add('hidden')
-  message.classList.remove('hidden')
+  displayedMessage.classList.remove('hidden')
 }
 
 function addToFavorites(event) {
@@ -49,13 +49,21 @@ function addToFavorites(event) {
 }
 
 function viewFavorites() {
-  favoriteMessagesList.innerHTML = ''
+  favoriteMessagesRadioList.innerHTML = ''
   for (var i = 0; i < favoriteMessages.length; i++) {
-    favoriteMessagesList.innerHTML +=
+    favoriteMessagesRadioList.innerHTML +=
     `
-    <li class="savedMessagesFont">${favoriteMessages[i]}</>
+    <input type="radio" id="message${i}"
+    name="fav-messages"
+    value="${favoriteMessages[i]}">
+    <label for="${favoriteMessages[i]}"
+    class="savedMessagesFont">${favoriteMessages[i]}
+    </label><br>
     `
   }
+  favoriteMessagesRadioList.innerHTML += (`<input type="submit" class="button" id="delete-button" value="Delete Message">`)
+  var deleteMessageButton = document.querySelector('#delete-button')
+  deleteMessageButton.addEventListener('click', selectMessageToDelete)
   selectionView.classList.add('hidden')
   displayedMessageView.classList.add('hidden')
   favoriteMessagesView.classList.remove('hidden')
@@ -64,6 +72,19 @@ function viewFavorites() {
   homeButton.classList.remove('hidden')
   addToFavoritesButton.classList.add('hidden')
   viewFavoritesButton.classList.add('hidden')
+}
+
+function selectMessageToDelete(event) {
+  event.preventDefault()
+  var messages = document.querySelectorAll('input[name="fav-messages"]')
+  for(message of messages) {
+    if(message.checked) {
+      messageToBeDeleted = message.value
+      break
+    }
+  }
+  favoriteMessages.splice(favoriteMessages.indexOf(messageToBeDeleted), 1)
+  viewFavorites()
 }
 
 function returnHome() {
@@ -85,6 +106,8 @@ function getRandomIndex(array) {
 // Message lists and data models
 
 var currentMessage
+
+var messageToBeDeleted
 
 var affirmations = [
   "I forgive myself and set myself free.",
