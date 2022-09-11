@@ -1,11 +1,4 @@
-/* font-family: 'Quicksand', sans-serif;
-COLORS
-light-yellow - #f7e4bf;
-light-blue - #78a7c6;
-dark-blue - #134d71;
-white - #ffffff;
-black - #000000;
-*/
+
 
 .gradient-background {
   background: rgb(19,77,113);
@@ -21,6 +14,13 @@ black - #000000;
 
 .title2 {
   font-size: 23px;
+}
+
+.title3 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  font-family: Quicksand;
 }
 
 .savedMessagesFont {

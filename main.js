@@ -9,10 +9,12 @@ var favoriteMessagesView = document.querySelector('#favorite-messages-view')
 var affirmationButton = document.querySelector('#affirmation-button')
 var mantraButton = document.querySelector('#mantra-button')
 var receiveMessageButton = document.querySelector('#receive-button')
+var clearMessageButton = document.querySelector('#clear-message-button')
 var addToFavoritesButton = document.querySelector('#add-to-favorites-button')
 var viewFavoritesButton = document.querySelector('#view-favorites-button')
 var homeButton = document.querySelector('#home-button')
 var displayedMessage = document.querySelector('#displayed-message')
+var deleteErrorMessage = document.querySelector('#delete-error-message')
 var image = document.querySelector('#image')
 var favoriteMessagesRadioList = document.querySelector('#favorite-messages-list')
 
@@ -25,6 +27,7 @@ receiveMessageButton.addEventListener('click', displayMessage)
 addToFavoritesButton.addEventListener('click', addToFavorites)
 viewFavoritesButton.addEventListener('click', viewFavorites)
 homeButton.addEventListener('click', returnHome)
+clearMessageButton.addEventListener('click', clearMessage)
 
 // Functions
 
@@ -37,14 +40,27 @@ function getRandomMantra() {
 }
 
 function displayMessage() {
-  displayedMessage.innerText = currentMessage
+  if(!currentMessage) {
+    displayedMessage.innerText = 'Please select an affirmation or mantra above.'
+  } else {
+    displayedMessage.innerText = currentMessage
+  }
   image.classList.add('hidden')
   displayedMessage.classList.remove('hidden')
 }
 
+function clearMessage() {
+  if(currentMessage) {
+    displayedMessage.innerText = ""
+    currentMessage = undefined
+    image.classList.remove('hidden')
+    displayedMessage.classList.add('hidden')
+  }
+}
+
 function addToFavorites(event) {
   event.preventDefault()
-  if (!favoriteMessages.includes(currentMessage))
+  if (currentMessage && !favoriteMessages.includes(currentMessage))
   favoriteMessages.push(currentMessage)
 }
 
@@ -72,18 +88,24 @@ function viewFavorites() {
   homeButton.classList.remove('hidden')
   addToFavoritesButton.classList.add('hidden')
   viewFavoritesButton.classList.add('hidden')
+  clearMessageButton.classList.add('hidden')
 }
 
-function selectMessageToDelete(event) {
-  event.preventDefault()
+function selectMessageToDelete() {
   var messages = document.querySelectorAll('input[name="fav-messages"]')
+  var displayErrorMessage = true
   for(message of messages) {
-    if(message.checked) {
+    if (message.checked) {
       messageToBeDeleted = message.value
-      break
+      favoriteMessages.splice(favoriteMessages.indexOf(messageToBeDeleted), 1)
+      displayErrorMessage = false
     }
   }
-  favoriteMessages.splice(favoriteMessages.indexOf(messageToBeDeleted), 1)
+  if (displayErrorMessage) {
+    deleteErrorMessage.classList.remove('hidden')
+  } else {
+    deleteErrorMessage.classList.add('hidden')
+  }
   viewFavorites()
 }
 
@@ -96,6 +118,8 @@ function returnHome() {
   homeButton.classList.add('hidden')
   addToFavoritesButton.classList.remove('hidden')
   viewFavoritesButton.classList.remove('hidden')
+  deleteErrorMessage.classList.add('hidden')
+  clearMessageButton.classList.remove('hidden')
 }
 
 function getRandomIndex(array) {
