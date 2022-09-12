@@ -6,7 +6,7 @@ Mantras are repetive phrases that are repeated again and again during mindfulnes
 
 This Solo Challenge gives students and instructors the opportunity to get a pulse on where you are with the foundational concepts of Module 1 curriculum. Students should use this as an opportunity to challenge themselves and work completely independently. Google can (and probably should!) be used, but any other code base should not be referenced. Instructors will be able to use your work, both completion of functionality and code quality, to determine where you stand and if you are behind for this point in the module, provide supports to intervene.
 
-The spec for this project can be found [here](https://frontend.turing.io/projects/module-1/self-care-center.html). 
+The spec for this project can be found [here](https://frontend.turing.io/projects/module-1/self-care-center.html).
 
 ## Learning Goals
 
@@ -27,25 +27,28 @@ ______________________________________________________
 Before turning this project in, erase this line and everything above it and fill in the info below.  
 ______________________________________________________  
 
-# Self-Care Center 
+# Self-Care Center
 
 ### Abstract:
-[//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
+I built a self-care webpage using HTML and CSS. I used Javascript to add interactiveness and functionality to the webpage. The app generates a random message of affirmation or mantra for the user and allows the user to save their favorite messages.
 
 ### Installation Instructions:
-[//]: <> (What steps does a person have to take to get your app cloned down and running?)
+What steps does a person have to take to get your app cloned down and running?)
+Fork the code from: https://github.com/tramtram1130/self-care-center. After forking it, initialize Git and clone it to your local machine. Run the app by typing in 'open index.html' in the terminal.
 
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
 ### Context:
-[//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
+I am currently midway through mod 1. I completed iteration 0, 1, and CYOA by Friday evening. I added an additional feature to further challenge myself.
 
 ### Contributors:
-[//]: <> (Who worked on this application? Link to their GitHubs.)
+Dana Truong - https://github.com/tramtram1130/
 
 ### Learning Goals:
-[//]: <> (What were the learning goals of this project? What tech did you work with?)
+I wanted to better understand the relationship between the DOM and data model. I made sure to code functions that will manipulate the data model and code separate functions that will display the updated data model.
 
 ### Wins + Challenges:
 [//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
+
+Some challenges I encountered includes incorporating a delete button to remove messages from the favorites list. I was deciding between being able to double click anywhere on the specific message before clicking the delete button, but decided a radio button by each message is more visually pleasing and user friendly.
