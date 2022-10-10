@@ -4,7 +4,9 @@
 I built a self-care webpage using HTML and CSS. I used Javascript to add interactiveness and functionality to the webpage. The app generates a random message of affirmation or mantra for the user and allows the user to save their favorite messages.
 
 ### Installation Instructions:
-Fork the code from: https://github.com/tramtram1130/self-care-center. After forking it, initialize Git and clone it to your local machine. Run the app by typing in 'open index.html' in the terminal.
+- Fork the code from: https://github.com/tramtram1130/self-care-center.
+- Initialize Git and clone it to your local machine.
+- Run the app by typing in 'open index.html' in the terminal.
 
 ### Preview of App:
 <img width="868" alt="Screen Shot 2022-09-12 at 2 20 02 PM" src="https://user-images.githubusercontent.com/110209726/189740409-2a004e46-6e21-41c5-9a46-e18e0ad6fb57.png">
